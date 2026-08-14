@@ -144,7 +144,7 @@ section{ padding-block: var(--sp-9); }
 .bg-dark .eyebrow{ color: var(--gold-light); }
 .bg-dark .eyebrow::before{ background: var(--gold-light); }
 
-.divider{ width:64px; height:1px; background: var(--gold); border:0; margin: var(--sp-9) auto; }
+.divider{ width:64px; height:1px; background: var(--gold); border:0; margin: var(--sp-6) auto; }
 
 /* ---------- Signature: monograma "S" ---------- */
 .sig-swash{
@@ -536,6 +536,31 @@ section{ padding-block: var(--sp-9); }
   :root{ --sp-9: 8rem; --sp-10: 11rem; }
 }
 
+/* ============================================================
+   HEADER MOBILE — versión sutil, tipo glass
+   ============================================================ */
+@media (max-width: 767px){
+  :root{ --header-h: 76px; }
+
+  .site-header{
+    background: rgba(255,255,255,0.87);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(228,225,216,0.35);
+    box-shadow: none;
+  }
+  .site-header.is-scrolled{ box-shadow: 0 1px 10px rgba(24,24,24,0.05); }
+
+  .brand-logo{ height:32px; }
+
+  .menu-toggle{
+    border: 0;
+    background: transparent;
+    width: 40px; height: 40px;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -583,7 +608,6 @@ section{ padding-block: var(--sp-9); }
     </div>
   </nav>
 </header>
-
 <main id="main">
 
   <!-- ================= HERO ================= -->
