@@ -40,8 +40,8 @@
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --fs-h1: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
-  --fs-h2: clamp(1.7rem, 1.4rem + 1.4vw, 2.5rem);
+  --fs-h1: clamp(2.75rem, 2rem + 3.2vw, 4.75rem);
+  --fs-h2: clamp(2rem, 1.6rem + 1.6vw, 3rem);
   --fs-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
   --fs-lead: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
   --fs-body: 1rem;
@@ -54,14 +54,14 @@
   --sp-3: 0.75rem;
   --sp-4: 1rem;
   --sp-5: 1.5rem;
-  --sp-6: 2rem;
-  --sp-7: 3rem;
-  --sp-8: 4.5rem;
-  --sp-9: 6.5rem;
-  --sp-10: 9rem;
+  --sp-6: 2.5rem;
+  --sp-7: 3.5rem;
+  --sp-8: 6rem;
+  --sp-9: 9rem;
+  --sp-10: 12rem;
 
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1360px;
   --max-reading: 62ch;
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -70,7 +70,7 @@
   --ease: cubic-bezier(.4,0,.2,1);
   --dur: 240ms;
 
-  --header-h: 76px;
+  --header-h: 96px;
 }
 
 /* ---------- Reset ---------- */
@@ -124,7 +124,7 @@ h1,h2,h3,p,figure{ margin:0; }
 }
 .eyebrow::before{ content:""; width:22px; height:1px; background:var(--gold); display:inline-block; }
 
-h1, .h1{ font-family: var(--font-display); font-weight:600; font-size: var(--fs-h1); line-height:1.08; letter-spacing:-0.01em; }
+h1, .h1{ font-family: var(--font-display); font-weight:600; font-size: var(--fs-h1); line-height:1.18; letter-spacing:-0.01em; }
 h2, .h2{ font-family: var(--font-display); font-weight:600; font-size: var(--fs-h2); line-height:1.15; }
 h3, .h3{ font-family: var(--font-display); font-weight:600; font-size: var(--fs-h3); line-height:1.3; }
 .lead{ font-size: var(--fs-lead); color:#3a3a3a; }
@@ -217,13 +217,13 @@ section{ padding-block: var(--sp-9); }
 .site-header .container{ display:flex; align-items:center; justify-content:space-between; gap: var(--sp-5); width:100%; }
 
 .brand{ display:flex; align-items:center; gap: var(--sp-3); text-decoration:none; color:var(--charcoal); }
-.brand-logo{ height:38px; width:auto; }
+.brand-logo{ height:52px; width:auto; }
 .brand-text{ display:flex; flex-direction:column; line-height:1.15; }
 .brand-text strong{ font-family: var(--font-display); font-size:1.15rem; font-weight:600; }
 .brand-text span{ font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-mid); }
 
 .nav-desktop{ display:none; }
-.nav-desktop ul{ display:flex; gap: var(--sp-6); }
+.nav-desktop ul{ display:flex; gap: var(--sp-7); }
 .nav-desktop a{
   text-decoration:none; font-size:0.9rem; font-weight:500; color:var(--charcoal);
   position:relative; padding-block:4px;
@@ -234,7 +234,7 @@ section{ padding-block: var(--sp-9); }
 }
 .nav-desktop a:hover::after, .nav-desktop a[aria-current="page"]::after{ transform:scaleX(1); }
 
-.header-actions{ display:flex; align-items:center; gap: var(--sp-4); }
+.header-actions{ display:flex; align-items:center; gap: var(--sp-6); }
 .header-actions .btn{ display:none; }
 
 .menu-toggle{
@@ -271,15 +271,13 @@ section{ padding-block: var(--sp-9); }
 .hero-copy{ max-width:52ch; }
 .hero h1{ margin-top: var(--sp-4); }
 .hero .lead{ margin-top: var(--sp-5); max-width:44ch; }
-.hero-ctas{ display:flex; flex-wrap:wrap; gap: var(--sp-4); margin-top: var(--sp-7); }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap: var(--sp-5); margin-top: var(--sp-8); }
 .hero-location{
   margin-top: var(--sp-6); display:flex; align-items:center; gap: var(--sp-2);
   font-size: var(--fs-small); color: var(--gray-mid);
 }
 .hero-visual{
   position:relative; aspect-ratio: 4/5; border-radius: var(--radius-md); overflow:hidden;
-  background: linear-gradient(160deg, var(--gray-light) 0%, var(--warm-white) 60%, #fff 100%);
-  display:flex; align-items:center; justify-content:center;
   border:1px solid var(--border);
 }
 .hero-visual .placeholder-mark{
@@ -292,22 +290,6 @@ section{ padding-block: var(--sp-9); }
   position:absolute; left:0; right:0; bottom:0; padding: var(--sp-4);
   font-size: var(--fs-xs); color: var(--gray-mid); background:rgba(255,255,255,0.85);
 }
-
-.hero-bg{ position:relative; overflow:hidden; min-height:88vh; display:flex; align-items:center; padding-block: var(--sp-9); color:#fff; }
-.hero-bg .container{ position:relative; z-index:2; display:block; }
-.hero-bg-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-.hero-bg-overlay{
-  position:absolute; inset:0; z-index:1;
-  background: linear-gradient(90deg, rgba(24,24,24,0.72) 0%, rgba(24,24,24,0.45) 55%, rgba(24,24,24,0.1) 100%);
-}
-.hero-bg .hero-copy{ max-width:52ch; }
-.hero-bg .eyebrow{ color: var(--gold-light); }
-.hero-bg .eyebrow::before{ background: var(--gold-light); }
-.hero-bg h1{ color:#fff; }
-.hero-bg .lead{ color:#f1efe8; }
-.hero-bg .hero-location{ color:#d8d5cc; }
-.hero-bg .btn-outline{ color:#fff; border-color:#fff; }
-.hero-bg .btn-outline:hover{ background:#fff; color:var(--charcoal); }
 
 /* ---------- Presentación (sobre mí) ---------- */
 .about-grid{ display:grid; gap: var(--sp-8); align-items:center; }
@@ -503,7 +485,7 @@ section{ padding-block: var(--sp-9); }
    TABLET — 768px+
    ============================================================ */
 @media (min-width: 768px){
-  :root{ --header-h: 84px; }
+  :root{ --header-h: 104px; }
   .grid-2{ grid-template-columns: repeat(2,1fr); }
   .grid-3{ grid-template-columns: repeat(2,1fr); }
   .pillars{ grid-template-columns: repeat(3,1fr); }
@@ -544,11 +526,6 @@ section{ padding-block: var(--sp-9); }
   <div class="container">
     <a class="brand" href="#inicio">
       <img class="brand-logo" src="logo.png" alt="Estudio Jurídico Sarrio & Asociados">
-  <circle cx="24" cy="30" r="21" fill="none" stroke="#B58A28" stroke-width="1.4"/>
-  <text x="24" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#B58A28" text-anchor="middle">S</text>
-  <text x="56" y="26" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#181818">Sarrio &amp; Asociados</text>
-  <text x="56" y="42" font-family="Arial, sans-serif" font-size="8.5" letter-spacing="1.5" fill="#6B6862">ESTUDIO JURÍDICO</text>
-</svg>
     </a>
 
     <nav class="nav-desktop" aria-label="Navegación principal">
@@ -591,9 +568,7 @@ section{ padding-block: var(--sp-9); }
 <main id="main">
 
   <!-- ================= HERO ================= -->
- <section class="hero hero-bg" id="inicio">
-    <img class="hero-bg-img" src="Hero.png" alt="Dra. Vanesa Mariel Sarrio, abogada especializada en Derecho de Familia">
-    <div class="hero-bg-overlay" aria-hidden="true"></div>
+  <section class="hero" id="inicio">
     <div class="container">
       <div class="hero-copy">
         <span class="eyebrow">Derecho de Familia</span>
@@ -605,25 +580,44 @@ section{ padding-block: var(--sp-9); }
         </div>
         <p class="hero-location"><span class="sig-mark" aria-hidden="true" style="width:20px;height:20px;"></span> La Plata · Provincia de Buenos Aires</p>
       </div>
+      <figure class="hero-visual">
+        <img src="Hero.png" alt="Dra. Vanesa Mariel Sarrio, abogada especializada en Derecho de Familia" style="width:100%;height:100%;object-fit:cover;">
+      </figure>
     </div>
   </section>
 
   <!-- ================= PRESENTACIÓN ================= -->
-  <section id="sobre-mi">
+<section id="sobre-mi">
+
     <div class="container about-grid">
+
      <figure class="Vanesa.png">
+
         <img src="Vanesa.png" alt="Dra. Vanesa Mariel Sarrio" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);">
+
       </figure>
+
       <div class="about-body">
+
         <span class="eyebrow">Sobre mí</span>
+
         <h2 class="h2" style="margin-top:0.75rem;">Dra. Vanesa Mariel Sarrio</h2>
+
         <p class="h3 about-role">Abogada especializada en Derecho de Familia</p>
+
         <p style="margin-top:1.5rem;">Soy Vanesa Mariel Sarrio, abogada con ejercicio profesional en la ciudad de La Plata y dedicada especialmente al Derecho de Familia.</p>
+
         <p>A lo largo de mi trayectoria profesional he acompañado a personas que atraviesan momentos especialmente importantes de sus vidas: separaciones, conflictos familiares, reclamos de alimentos, dificultades en el vínculo con los hijos, divorcios y distintas situaciones que requieren tomar decisiones jurídicas con claridad y seguridad.</p>
+
         <a class="btn btn-outline" href="#proceso">Conocer más sobre mí</a>
+
       </div>
+
     </div>
+
   </section>
+
+
 
   <!-- ================= SERVICIOS ================= -->
   <section class="bg-warm" id="servicios">
@@ -1028,7 +1022,7 @@ section{ padding-block: var(--sp-9); }
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-    <img class="brand-logo" src="logo.png" alt="Estudio Jurídico Sarrio & Asociados" style="height:34px;width:auto;">
+          <img class="brand-logo" src="logo.png" alt="Estudio Jurídico Sarrio & Asociados" style="height:34px;width:auto;">
         </div>
         <p class="footer-desc">Dra. Vanesa Mariel Sarrio — Abogada especializada en Derecho de Familia. La Plata, Provincia de Buenos Aires.</p>
         <!-- Redes sociales: agregar cuando el cliente las provea -->
