@@ -96,7 +96,7 @@ h1,h2,h3,p,figure{ margin:0; }
 }
 
 /* ---------- Utilidades ---------- */
-.container{ max-width: var(--max-width); margin-inline:auto; padding-inline: var(--sp-5); }
+.container{ max-width: var(--max-width); margin-inline:auto; padding-inline: clamp(1.5rem, 5vw, 5rem); }
 .reading{ max-width: var(--max-reading); }
 .visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
@@ -263,9 +263,9 @@ section{ padding-block: var(--sp-9); }
 .nav-mobile-contact a{ color:var(--charcoal); text-decoration:none; }
 
 /* ---------- Hero ---------- */
-.hero{ position:relative; overflow:hidden; padding-block: var(--sp-8) var(--sp-9); }
+.hero{ position:relative; overflow:hidden; padding-block: var(--sp-9) var(--sp-10); }
 .hero .container{
-  display:grid; gap: var(--sp-8);
+  display:grid; gap: var(--sp-9);
   position:relative; z-index:1;
 }
 .hero-copy{ max-width:52ch; }
@@ -778,7 +778,7 @@ section{ padding-block: var(--sp-9); }
         <p>Por eso, mi objetivo es que quienes llegan al estudio encuentren no solamente asesoramiento jurídico, sino también un espacio donde puedan sentirse escuchados, respetados y acompañados.</p>
         <p>Trabajo con responsabilidad, compromiso y dedicación, procurando brindar una atención personalizada y mantener al cliente informado durante las distintas etapas del proceso.</p>
       </div>
-      <div class="accompany-visual" aria-hidden="true"></div>
+      <figure class="accompany-visual" style="margin:0; overflow:hidden;">         <img src="Acompanamiento.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">       </figure>
     </div>
   </section>
 
@@ -915,8 +915,8 @@ section{ padding-block: var(--sp-9); }
   <section class="bg-dark cta-final">
     <div class="container">
       <span class="eyebrow" style="justify-content:center;">Empecemos</span>
-      <h2 style="margin-top:0.75rem;">Tu situación merece una estrategia, no una respuesta genérica.</h2>
-      <p>Contame qué está pasando y analizamos cuál puede ser el camino jurídico más adecuado.</p>
+    <h2 style="margin-top:0.75rem;">Cada situación familiar es distinta. Conversemos sobre la tuya.</h2>
+      <p>Contame qué está pasando y te oriento sobre los pasos a seguir.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contacto">Solicitar consulta</a>
         <a class="btn btn-wa" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp · 221-459 0559</a>
@@ -925,92 +925,29 @@ section{ padding-block: var(--sp-9); }
   </section>
 
   <!-- ================= CONTACTO ================= -->
-  <section id="contacto">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <span class="eyebrow">Contacto</span>
-        <h2 style="margin-top:0.75rem;">Hablemos de tu situación</h2>
-        <dl>
-          <div>
-            <dt>Profesional</dt>
-            <dd>Dra. Vanesa Mariel Sarrio — Abogada especializada en Derecho de Familia</dd>
-          </div>
-          <div>
-            <dt>Ubicación</dt>
-            <dd>La Plata, Provincia de Buenos Aires</dd>
-          </div>
-          <div>
-            <dt>Teléfono</dt>
-            <dd><a href="tel:+5492214590559">221-459 0559</a></dd>
-          </div>
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:ESTUDIOJURIDICO_SARRIO@hotmail.com">ESTUDIOJURIDICO_SARRIO@hotmail.com</a></dd>
-          </div>
-        </dl>
-        <div class="contact-note">La consulta inicial nos permite conocer tu situación y orientarte sobre los pasos a seguir.</div>
-        <a class="btn btn-outline" style="margin-top:2rem;" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
-      </div>
+<section id="contacto">
+    <div class="container" style="max-width:640px; text-align:center;">
+      <span class="eyebrow" style="justify-content:center;">Contacto</span>
+      <h2 style="margin-top:0.75rem;">Hablemos de tu situación</h2>
+      <p class="lead" style="margin-top:1.5rem;">Escribime por WhatsApp, contame qué está pasando y coordinamos tu consulta.</p>
+      <a class="btn btn-primary" style="margin-top:2.5rem;" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp · 221-459 0559</a>
 
-      <form class="form" id="contact-form" novalidate>
-        <div class="form-row form-row-2">
-          <div class="field">
-            <label for="nombre">Nombre y apellido <span class="required">*</span></label>
-            <input type="text" id="nombre" name="nombre" required autocomplete="name">
-            <span class="field-error" role="alert">Este campo es obligatorio.</span>
-          </div>
-          <div class="field">
-            <label for="telefono">Teléfono <span class="required">*</span></label>
-            <input type="tel" id="telefono" name="telefono" required autocomplete="tel">
-            <span class="field-error" role="alert">Este campo es obligatorio.</span>
-          </div>
+      <dl style="margin-top:3.5rem; display:grid; gap:1.25rem; text-align:left; max-width:420px; margin-inline:auto;">
+        <div>
+          <dt style="font-size:var(--fs-xs); text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid);">Profesional</dt>
+          <dd style="margin:0; font-size:1.05rem;">Dra. Vanesa Mariel Sarrio — Abogada especializada en Derecho de Familia</dd>
         </div>
-
-        <div class="field">
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-          <span class="field-error" role="alert">Ingresá un email válido.</span>
+        <div>
+          <dt style="font-size:var(--fs-xs); text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid);">Ubicación</dt>
+          <dd style="margin:0; font-size:1.05rem;">La Plata, Provincia de Buenos Aires</dd>
         </div>
-
-        <div class="field">
-          <label for="motivo">Motivo de consulta <span class="required">*</span></label>
-          <select id="motivo" name="motivo" required>
-            <option value="">Seleccioná una opción</option>
-            <option value="alimentos">Alimentos</option>
-            <option value="divorcio">Divorcio</option>
-            <option value="cuidado-personal">Cuidado personal</option>
-            <option value="regimen-comunicacion">Régimen de comunicación</option>
-            <option value="filiacion">Filiación</option>
-            <option value="adopcion">Adopción</option>
-            <option value="vivienda-familiar">Vivienda familiar</option>
-            <option value="violencia-familiar">Violencia familiar</option>
-            <option value="ejecucion-alimentos">Ejecución de alimentos</option>
-            <option value="otro">Otro</option>
-          </select>
-          <span class="field-error" role="alert">Seleccioná un motivo de consulta.</span>
+        <div>
+          <dt style="font-size:var(--fs-xs); text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid);">Email</dt>
+          <dd style="margin:0; font-size:1.05rem;"><a href="mailto:ESTUDIOJURIDICO_SARRIO@hotmail.com">ESTUDIOJURIDICO_SARRIO@hotmail.com</a></dd>
         </div>
-
-        <div class="field">
-          <label for="mensaje">Mensaje <span class="required">*</span></label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
-          <span class="field-error" role="alert">Este campo es obligatorio.</span>
-        </div>
-
-        <div class="field field-checkbox">
-          <input type="checkbox" id="privacidad" name="privacidad" required>
-          <label for="privacidad">Leí y acepto la <a href="legal.html#privacidad">Política de Privacidad</a>. <span class="required">*</span></label>
-          <span class="field-error" role="alert">Debés aceptar la Política de Privacidad para continuar.</span>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Enviar consulta</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </div>
-        <!-- NOTA: formulario sin backend conectado. Ver comentario en /js/main.js -->
-      </form>
+      </dl>
     </div>
   </section>
-
 </main>
 
 <a class="wa-float" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
