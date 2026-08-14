@@ -293,6 +293,22 @@ section{ padding-block: var(--sp-9); }
   font-size: var(--fs-xs); color: var(--gray-mid); background:rgba(255,255,255,0.85);
 }
 
+.hero-bg{ position:relative; overflow:hidden; min-height:88vh; display:flex; align-items:center; padding-block: var(--sp-9); color:#fff; }
+.hero-bg .container{ position:relative; z-index:2; display:block; }
+.hero-bg-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.hero-bg-overlay{
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(90deg, rgba(24,24,24,0.72) 0%, rgba(24,24,24,0.45) 55%, rgba(24,24,24,0.1) 100%);
+}
+.hero-bg .hero-copy{ max-width:52ch; }
+.hero-bg .eyebrow{ color: var(--gold-light); }
+.hero-bg .eyebrow::before{ background: var(--gold-light); }
+.hero-bg h1{ color:#fff; }
+.hero-bg .lead{ color:#f1efe8; }
+.hero-bg .hero-location{ color:#d8d5cc; }
+.hero-bg .btn-outline{ color:#fff; border-color:#fff; }
+.hero-bg .btn-outline:hover{ background:#fff; color:var(--charcoal); }
+
 /* ---------- Presentación (sobre mí) ---------- */
 .about-grid{ display:grid; gap: var(--sp-8); align-items:center; }
 .about-photo{
@@ -575,7 +591,9 @@ section{ padding-block: var(--sp-9); }
 <main id="main">
 
   <!-- ================= HERO ================= -->
-  <section class="hero" id="inicio">
+ <section class="hero hero-bg" id="inicio">
+    <img class="hero-bg-img" src="Hero.png" alt="Dra. Vanesa Mariel Sarrio, abogada especializada en Derecho de Familia">
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-copy">
         <span class="eyebrow">Derecho de Familia</span>
@@ -587,11 +605,6 @@ section{ padding-block: var(--sp-9); }
         </div>
         <p class="hero-location"><span class="sig-mark" aria-hidden="true" style="width:20px;height:20px;"></span> La Plata · Provincia de Buenos Aires</p>
       </div>
-      <figure class="hero-visual">
-        <!-- TODO: reemplazar por fotografía profesional de la Dra. Sarrio (retrato editorial, luz natural) -->
-        <span class="placeholder-mark" aria-hidden="true">S</span>
-        <figcaption>Fotografía profesional pendiente de carga</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -1016,12 +1029,7 @@ section{ padding-block: var(--sp-9); }
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg class="brand-logo" viewBox="0 0 220 60" role="img" aria-label="Estudio Jurídico Sarrio & Asociados" style="height:34px;width:auto;">
-  <circle cx="24" cy="30" r="21" fill="none" stroke="#D6B45A" stroke-width="1.4"/>
-  <text x="24" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#D6B45A" text-anchor="middle">S</text>
-  <text x="56" y="26" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#FFFFFF">Sarrio &amp; Asociados</text>
-  <text x="56" y="42" font-family="Arial, sans-serif" font-size="8.5" letter-spacing="1.5" fill="#b3b0a6">ESTUDIO JURÍDICO</text>
-</svg>
+    <img class="brand-logo" src="logo.png" alt="Estudio Jurídico Sarrio & Asociados" style="height:34px;width:auto;">
         </div>
         <p class="footer-desc">Dra. Vanesa Mariel Sarrio — Abogada especializada en Derecho de Familia. La Plata, Provincia de Buenos Aires.</p>
         <!-- Redes sociales: agregar cuando el cliente las provea -->
