@@ -255,16 +255,16 @@ section{ padding-block: var(--sp-9); }
 .nav-mobile{
   position:fixed; inset:var(--header-h) 0 0 0; background:var(--white);
   transform: translateX(100%); transition: transform var(--dur) var(--ease);
-  z-index:99; overflow-y:auto; padding: var(--sp-7) var(--sp-5);
+  z-index:99; overflow-y:auto; padding: var(--sp-5);
 }
 .nav-mobile.is-open{ transform: translateX(0); }
-.nav-mobile ul{ display:flex; flex-direction:column; gap: var(--sp-1); }
+.nav-mobile ul{ display:flex; flex-direction:column; }
 .nav-mobile a{
-  display:block; padding: var(--sp-4) var(--sp-2); text-decoration:none; color:var(--charcoal);
-  font-family: var(--font-display); font-size:1.4rem; border-bottom:1px solid var(--border);
+  display:block; padding: var(--sp-3) var(--sp-2); text-decoration:none; color:var(--charcoal);
+  font-family: var(--font-display); font-size:1.1rem; line-height:1.2; border-bottom:1px solid var(--border);
 }
-.nav-mobile .btn{ margin-top: var(--sp-6); width:100%; }
-.nav-mobile-contact{ margin-top: var(--sp-8); display:flex; flex-direction:column; gap:var(--sp-3); font-size:var(--fs-small); color:var(--gray-mid); }
+.nav-mobile .btn{ margin-top: var(--sp-5); width:100%; }
+.nav-mobile-contact{ margin-top: var(--sp-6); display:flex; flex-direction:column; gap:var(--sp-2); font-size:var(--fs-small); color:var(--gray-mid); }
 .nav-mobile-contact a{ color:var(--charcoal); text-decoration:none; }
 
 /* ---------- Hero ---------- */
@@ -369,10 +369,18 @@ section{ padding-block: var(--sp-9); }
 .pillar p{ margin-top:var(--sp-3); color:#4a4a4a; }
 
 /* Acompañamiento */
-.accompany-grid{ display:grid; gap:var(--sp-8); align-items:center; }
 .accompany-visual{
   aspect-ratio: 5/4; border-radius: var(--radius-md); border:1px solid var(--border);
   background: linear-gradient(140deg, var(--gray-light), #fff 70%);
+  position:relative;
+}
+.accompany-visual::after{
+  content:"";
+  position:absolute; inset:14px;
+  border:1px solid var(--gold-light);
+  border-radius:2px;
+  pointer-events:none;
+  z-index:2;
 }
 
 /* Proceso */
