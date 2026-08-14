@@ -206,9 +206,10 @@ section{ padding-block: var(--sp-9); }
 /* ---------- Header ---------- */
 .site-header{
   position:sticky; top:0; z-index:100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom:1px solid var(--border);
+  background: rgba(255,255,255,0.87);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(228,225,216,0.35);
   height: var(--header-h);
   display:flex; align-items:center;
   transition: box-shadow var(--dur) var(--ease);
@@ -292,7 +293,7 @@ section{ padding-block: var(--sp-9); }
 }
 
 .hero-bg{ position:relative; overflow:hidden; min-height:90vh; display:flex; align-items:center; padding-block: var(--sp-9); color:#fff; }
-.hero-bg .container{ position:relative; z-index:2; display:block; }
+.hero-bg .container{   position:relative; z-index:2; display:block;   max-width:none; width:100%; margin-inline:0;   padding-inline: clamp(1.5rem, 6vw, 7rem); }
 .hero-bg-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
 .hero-bg-overlay{
   position:absolute; inset:0; z-index:1;
@@ -310,13 +311,14 @@ section{ padding-block: var(--sp-9); }
 /* ---------- Presentación (sobre mí) ---------- */
 .about-grid{ display:grid; gap: var(--sp-8); align-items:center; }
 .about-photo{
-  aspect-ratio: 3/4; border-radius: var(--radius-md); border:1px solid var(--border);
-  background: linear-gradient(150deg, var(--warm-white), var(--gray-light));
-  display:flex; align-items:center; justify-content:center; position:relative;
+  aspect-ratio: 3/4; border-radius: var(--radius-md);
+  border: 1px solid var(--gold);
+  padding: 10px;
+  background: var(--white);
+  position:relative;
 }
-.about-photo::after{
-  content:""; position:absolute; inset:14px; border:1px solid var(--gold-light); opacity:0.5;
-  border-radius: var(--radius-md); z-index:2; pointer-events:none;
+.about-photo img{
+  display:block; border-radius: 2px;
 }
 .about-photo .placeholder-mark{ font-family:var(--font-display); font-size:5rem; color:var(--gold); opacity:0.3; }
 .about-body p + p{ margin-top: var(--sp-4); }
