@@ -210,7 +210,7 @@ section{ padding-block: var(--sp-9); }
 /* ---------- Header ---------- */
 .site-header{
   position:sticky; top:0; z-index:100;
-  background: rgba(255,255,255,0.87);
+  background: rgba(255,255,255,0.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(228,225,216,0.35);
@@ -253,7 +253,13 @@ section{ padding-block: var(--sp-9); }
 .menu-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
 
 .nav-mobile{
-  position:fixed; inset:var(--header-h) 0 0 0; background:var(--white);
+  position:fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--header-h));
+  height: calc(100dvh - var(--header-h));
+  background:var(--white);
   transform: translateX(100%); transition: transform var(--dur) var(--ease);
   z-index:99; overflow-y:auto; padding: var(--sp-5);
 }
