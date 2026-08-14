@@ -76,6 +76,10 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
+html, body{
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body{
   margin:0;
   font-family: var(--font-body);
@@ -312,15 +316,22 @@ section{ padding-block: var(--sp-9); }
 .about-grid{ display:grid; gap: var(--sp-8); align-items:center; }
 .about-photo{
   aspect-ratio: 3/4 !important; border-radius: var(--radius-md) !important;
-  border: 3px solid var(--gold) !important;
-  padding: 12px !important;
-  background: var(--white) !important;
+  border: 0 !important;
+  padding: 0 !important;
   position:relative !important;
   box-sizing: border-box !important;
 }
 .about-photo img{
   display:block !important; width:100% !important; height:100% !important;
-  border-radius: 2px !important; object-fit:cover !important;
+  border-radius: var(--radius-md) !important; object-fit:cover !important;
+}
+.about-photo::after{
+  content:"";
+  position:absolute; inset:14px;
+  border:1px solid var(--gold-light);
+  border-radius:2px;
+  pointer-events:none;
+  z-index:2;
 }
 .about-photo .placeholder-mark{ font-family:var(--font-display); font-size:5rem; color:var(--gold); opacity:0.3; }
 .about-body p + p{ margin-top: var(--sp-4); }
