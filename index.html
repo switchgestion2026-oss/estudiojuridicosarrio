@@ -291,6 +291,22 @@ section{ padding-block: var(--sp-9); }
   font-size: var(--fs-xs); color: var(--gray-mid); background:rgba(255,255,255,0.85);
 }
 
+.hero-bg{ position:relative; overflow:hidden; min-height:90vh; display:flex; align-items:center; padding-block: var(--sp-9); color:#fff; }
+.hero-bg .container{ position:relative; z-index:2; display:block; }
+.hero-bg-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.hero-bg-overlay{
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(90deg, rgba(24,24,24,0.68) 0%, rgba(24,24,24,0.4) 55%, rgba(24,24,24,0.08) 100%);
+}
+.hero-bg .hero-copy{ max-width:52ch; }
+.hero-bg .eyebrow{ color: var(--gold-light); }
+.hero-bg .eyebrow::before{ background: var(--gold-light); }
+.hero-bg h1{ color:#fff; }
+.hero-bg .lead{ color:#f1efe8; }
+.hero-bg .hero-location{ color:#d8d5cc; }
+.hero-bg .btn-outline{ color:#fff; border-color:#fff; }
+.hero-bg .btn-outline:hover{ background:#fff; color:var(--charcoal); }
+
 /* ---------- Presentación (sobre mí) ---------- */
 .about-grid{ display:grid; gap: var(--sp-8); align-items:center; }
 .about-photo{
@@ -571,7 +587,10 @@ section{ padding-block: var(--sp-9); }
 <main id="main">
 
   <!-- ================= HERO ================= -->
-  <section class="hero" id="inicio">
+   
+ <section class="hero hero-bg" id="inicio">
+    <img class="hero-bg-img" src="Hero.png" alt="Dra. Vanesa Mariel Sarrio, abogada especializada en Derecho de Familia">
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-copy">
         <span class="eyebrow">Derecho de Familia</span>
@@ -583,9 +602,6 @@ section{ padding-block: var(--sp-9); }
         </div>
         <p class="hero-location"><span class="sig-mark" aria-hidden="true" style="width:20px;height:20px;"></span> La Plata · Provincia de Buenos Aires</p>
       </div>
-      <figure class="hero-visual">
-        <img src="Hero.png" alt="Dra. Vanesa Mariel Sarrio, abogada especializada en Derecho de Familia" style="width:100%;height:100%;object-fit:cover;">
-      </figure>
     </div>
   </section>
 
