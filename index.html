@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7TFDZGEHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z7TFDZGEHB');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Estudio Jurídico Sarrio & Asociados | Abogada de Familia en La Plata</title>
@@ -1001,7 +1009,7 @@ section{ padding-block: var(--sp-9); }
       <p>Contame qué está pasando y te oriento sobre los pasos a seguir.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contacto">Solicitar consulta</a>
-        <a class="btn btn-wa" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp · 221-459 0559</a>
+        <a class="btn btn-wa" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" onclick="gtag('event','click_whatsapp',{area:'general'})">WhatsApp · 221-459 0559</a>
       </div>
     </div>
   </section>
@@ -1012,7 +1020,7 @@ section{ padding-block: var(--sp-9); }
       <span class="eyebrow" style="justify-content:center;">Contacto</span>
       <h2 style="margin-top:0.75rem;">Hablemos de tu situación</h2>
       <p class="lead" style="margin-top:1.5rem;">Escribime por WhatsApp, contame qué está pasando y coordinamos tu consulta.</p>
-      <a class="btn btn-primary" style="margin-top:2.5rem;" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp · 221-459 0559</a>
+      <a class="btn btn-primary" style="margin-top:2.5rem;" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" onclick="gtag('event','click_whatsapp',{area:'general'})">WhatsApp · 221-459 0559</a>
 
       <dl style="margin-top:3.5rem; display:grid; gap:1.25rem; text-align:left; max-width:420px; margin-inline:auto;">
         <div>
@@ -1032,7 +1040,7 @@ section{ padding-block: var(--sp-9); }
   </section>
 </main>
 
-<a class="wa-float" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<a class="wa-float" href="https://wa.me/5492214590559?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" onclick="gtag('event','click_whatsapp',{area:'general'})">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.53a9.87 9.87 0 0 0 4.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.1a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.05.91.92-2.98-.2-.31a8.15 8.15 0 0 1-1.26-4.35c0-4.51 3.68-8.19 8.2-8.19 2.2 0 4.25.85 5.8 2.4a8.13 8.13 0 0 1 2.4 5.8c0 4.51-3.68 8.19-8.2 8.19Zm4.5-6.13c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>
 </a>
 
